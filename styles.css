@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
+
+  /* Global Variables */
+
+  /* Colors */
+  --clr-dark-magenta-title: hsl(300, 43%, 22%);
+  --clr-soft-pink: hsl(333, 80%, 67%);
+  --clr-dark-magenta: hsl(303, 10%, 53%);
+  --clr-light-magenta: hsl(300, 24%, 96%);
+  --clr-white: hsl(0, 0%, 100%);
+
+  /* Fonts*/
+  --ft-font-w400: 400;
+  --ft-font-w500: 500;
+  --ft-font-w700: 700;
+  --ft-font-weight: var(--ft-font-w400);
+  --ft-font-size: 15px;
+
+  /* Assign variables */
+  font-size: var(--ft-font-size);
+  font-weight: var(--ft-font-weight);
+  color: var(--clr-dark-magenta);
+}
+body {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+
+  background-image: url("./images/bg-pattern-top-mobile.svg"),
+    url("./images/bg-pattern-bottom-mobile.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: top right, bottom right;
+  background-size: 100%;
+}
+
+/* HEADER SECTION  */
+.wrapper {
+  padding: 3rem 1.5rem;
+  max-width: 480px;
+  /* min-width: 375px; */
+}
+.header {
+  text-align: center;
+}
+.header__intro--title {
+  --ft-font-weight: var(--ft-font-w700);
+  --ft-font-size: 3rem;
+  line-height: 2.5rem;
+  color: var(--clr-dark-magenta-title);
+  padding-bottom: 1rem;
+}
+.header__intro--details {
+  line-height: 1.3rem;
+}
+.header__rated {
+  margin: 2rem 0;
+}
+.header__rated__items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--clr-light-magenta);
+  margin-top: 1rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+.header__rated--icon {
+  background-image: url("./images/icon-star.svg");
+  background-repeat: space;
+  height: 20px;
+  width: 95px;
+  margin-left: 1rem;
+}
+.header__rated__items p {
+  padding: 0.5rem 0;
+  color: var(--clr-dark-magenta-title);
+  --ft-font-weight: var(--ft-font-w700);
+}
+
+/* FOOTER SECTION  */
+.footer__reviews {
+  background-color: var(--clr-dark-magenta-title);
+  margin-bottom: 1.5rem;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
+.footer__reviews__avt {
+  display: flex;
+  align-items: center;
+  padding-bottom: 1.5rem;
+}
+.footer__reviews__avt img {
+  height: 40px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  margin-right: 1.2rem;
+}
+.footer__reviews__avt--buyer {
+  color: var(--clr-white);
+}
+.footer__reviews__avt--buyer::after {
+  content: "Verified Buyer";
+  display: block;
+  padding-top: 0.5rem;
+  color: var(--clr-soft-pink);
+}
+.footer__review--content {
+  color: var(--clr-white);
+  line-height: 1.3rem;
+}
+
+/* RESPONSIVE FOR DESKTOP */
+@media (min-width: 40em) {
+  body {
+    background-image: url("./images/bg-pattern-top-desktop.svg"),
+      url("./images/bg-pattern-bottom-desktop.svg");
+    justify-content: center;
+    align-items: center;
+    background-position: left -55vw top 0, right -11vw bottom 0;
+  }
+  .wrapper {
+    max-width: 1000px;
+  }
+  .header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .header__intro {
+    max-width: 50%;
+  }
+  .header__intro--title {
+    --ft-font-size: 4rem;
+    --ft-font-weight: var(--ft-font-w500);
+    line-height: 3rem;
+    text-align: left;
+  }
+  .header__intro--details {
+    text-align: left;
+    --ft-font-size: 1.2rem;
+    padding-bottom: 4rem;
+  }
+  .header__rated__items {
+    flex-direction: row;
+    padding: 1rem;
+    justify-content: left;
+    min-width: max-content;
+  }
+  .header__rated__items:first-child {
+    transform: translateX(-5rem);
+  }
+  .header__rated__items:nth-child(2) {
+    transform: translateX(-3rem);
+  }
+  .header__rated__items p {
+    padding: 0 1rem;
+  }
+  .footer {
+    display: flex;
+    justify-content: space-around;
+  }
+  .footer__reviews {
+    margin-right: 1rem;
+    height: max-content;
+  }
+  .footer__review--content {
+    color: var(--clr-white);
+    --ft-font-weight: var(--ft-font-w400);
+  }
+  .footer__reviews:nth-child(2) {
+    margin-top: 1.5rem;
+  }
+  .footer__reviews:last-child {
+    margin-top: 3rem;
+    margin-right: 0;
+  }
+}
